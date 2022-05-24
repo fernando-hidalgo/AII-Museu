@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block encabezado %}
+
+<style>.block {
+    text-align: center;
+    }       
+
+.b {
+    padding: 50px;
+    display: inline-block;
+    }
+
+h3{
+  font-family: Garamond, serif;
+}
+
+h4{
+  font-family: 'Times New Roman', serif;
+}   
+
+h5{
+  font-family: 'Times New Roman', serif;
+}   
+
+</style>
+<center><h1>Obras Recomendadas</h1></center>
+
+{% endblock %}
+{% block contenido %}
+<br>
+<center><h4>Las tres Obras que mas se parecen a {{obra.nombre}} son:</h4>
+<l>
+{% for o, s in items %}
+<li>Nombre: {{o.nombre}} ----->   Similitud: {{s | floatformat:"2"}}</li>
+{% endfor %}
+</l></center>
+{% endblock %}

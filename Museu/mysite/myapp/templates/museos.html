@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+
+<style>.block {
+    text-align: center;
+    }       
+
+.b {
+    padding: 50px;
+    display: inline-block;
+    }
+</style>
+<center><h1>Museos</h1></center>
+
+{% endblock %}
+{% block contenido %} 
+    <div class="block">
+        {% for museo in museos %}
+        <div class="b">
+            <div class="card" >
+                <div class="card-body">
+                    <h5>{{museo.nombre}}</h5>
+                </div>   
+            </div>           
+        </div>
+        {% endfor %}
+{% endblock %}

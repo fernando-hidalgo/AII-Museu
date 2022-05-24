@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+
+<style>.block {
+    text-align: center;
+    }       
+
+.b {
+    padding: 50px;
+    display: inline-block;
+    }</style>
+<center><h1>Buscar obras similares</h1></center>
+
+{% endblock %}
+
+{% block contenido %} 
+<center>
+    <br>
+    <h2>Escribe el ID de una obra.</h2>
+    <br>
+    <form  id="formulario" method="post" action=''>{% csrf_token %}{{formulario}}
+        <button class="btn-primary" type="submit" name="action">Buscar</button>
+    </form>
+</center>
+{% endblock %}

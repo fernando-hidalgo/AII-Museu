@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+
+<style>.block {
+    text-align: center;
+    }       
+
+.b {
+    padding: 50px;
+    display: inline-block;
+    }</style>
+<center><h1>Buscar obras por artista</h1></center>
+
+{% endblock %}
+
+{% block contenido %} 
+<center>
+    <br>
+    <h2>Escribe el nombre de un artista.</h2>
+    <br>
+    <form  id="formulario" method="post" action=''>{% csrf_token %}{{formulario}}
+        <button class="btn-primary" type="submit" name="action">Buscar sus obras</button>
+    </form>
+</center>
+
+
+    {% if obras %}
+        <h3> {{ obras|length }} Obras del artista: {{artista}}</h3>
+        <div class="block">
+            {% for obra in obras %}
+            <div class="b">
+                <div class="card" >
+                    <img class="card-img-top" src="{{obra.imagenTarjeta}}" alt="Obra" width="300" height="300">
+                <div class="card-body">
+                <h5><b>{{obra.nombre}}<b></h5>
+                <h5>{{obra.artista}}</h5>
+                <h6>{{obra.fecha}}</h6>   
+                <a href="/detallesObra/{{obra.id}}" class="btn btn-primary">+ Info</a>
+            </div>
+        </div>           
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

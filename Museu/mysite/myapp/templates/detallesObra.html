@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+
+<style>
+.left{
+    float:left;
+}
+.right{
+    float: right;
+    margin-left: 40px;
+}
+.block {
+    text-align: center;
+    }       
+
+.b {
+    padding: 50px;
+    display: inline-block;
+    
+    }
+
+#sidebar {
+    width: 100px;
+    min-height: 400px;
+    float: left;
+}
+
+#page-wrap {
+    width: 300px;
+    min-height: 400px;
+    float: left;
+} 
+</style>
+<center><h1>{{obra.nombre}}</h1></center>
+
+{% endblock %}
+
+{% block contenido %} 
+        <div class="b" style="float:left;">
+            <div id="sidebar"></div>
+                <img class="img-thumbnail"width="450px" height="750px"src="{{obra.imagen}}">
+            </div>
+            <div id="page-wrap">
+                <br><br>
+                <h4>Fecha</h4>
+                <p>{{obra.fecha}}</p>
+                <h4>Dimesiones</h4>
+                <p>{{obra.dimensiones}}</p>
+                <h4>Museo</h4>
+                <p>{{obra.lugar}}</p>
+                <h4>Autor</h4>
+                <p>{{obra.artista}}</p>
+                <h4>Expuesto en</h4>
+                <p>{{obra.expuesto}}</p>
+                <h4>Dimesiones</h4>
+                <p>{{obra.dimensiones}}</p>
+                <h4>Técnica</h4>
+                <p>{{obra.tecnica}}</p>
+                <br><br><br><br><br><br>
+                <br><br><br><br><br><br>
+
+            </div>
+                <br><br>
+                <h4>Descripcion</h4>
+                <span>{{obra.descripcion}}</span>
+        </div>
+{% endblock %}

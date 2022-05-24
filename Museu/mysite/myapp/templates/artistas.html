@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+
+<style>.block {
+    text-align: center;
+    }       
+
+.b {
+    padding: 50px;
+    display: inline-block;
+    }</style>
+<center><h1>Artistas</h1></center>
+
+{% endblock %}
+{% block contenido %} 
+    <div class="block">
+        {% for artista in artistas %}
+        <div class="b">
+            <div class="card" >
+                <div class="card-body">
+                    <h5>{{artista.nombre}}</h5>
+                </div>   
+            </div>               
+        </div>
+        {% endfor %}
+{% endblock %}

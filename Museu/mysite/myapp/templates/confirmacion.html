@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+<center><h1> Carga de la Base de Datos</h1>
+{% endblock %}
+
+  {% block contenido %}
+    <br>
+    <h5>Cargar la BD es un proceso lento que borra la base de datos actual</h5>
+    <form id='formulario' method='post' action=''>{% csrf_token %}
+    <br><br>
+    <button class="btn-danger" type="submit" name="Aceptar" value="Aceptar">Aceptar</button>
+    <button class="btn-default" type="submit" name="Cancelar" value="Cancelar">Cancelar</button>
+  </form>
+</center>
+  {% endblock %}
